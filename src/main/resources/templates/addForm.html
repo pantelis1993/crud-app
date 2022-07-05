@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/thymeleaf.html to edit this template
+-->
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>New Trainer</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
+              integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">        
+    </head>
+
+    <body>
+        <div class="container">
+            <h3>Add New Trainer</h3>
+            <hr>
+                <form action="#" th:action="@{/trainers/save}"
+                      th:object="${newTrainer}" method="POST">
+                    
+                    <input type="hidden" th:field="*{trainerId}" />
+                    
+                    <input type="text" th:field="*{firstName}"
+                           class="form-control mb-4 col-4" placeholder="First Name">
+                    <input type="text" th:field="*{lastName}"
+                           class="form-control mb-4 col-4" placeholder="Last Name">
+                    <input type="text" th:field="*{subject}"
+                               class="form-control mb-4 col-4" placeholder="Trainer's subject">
+                    <hr>
+                        <button type="submit" class="btn btn-info col-2">Save</button>
+                                
+                </form>
+                <hr>
+                    <a th:href="@{/trainers/list}">Trainer List</a>
+            
+        </div>
+    </body>
+
+</html>
